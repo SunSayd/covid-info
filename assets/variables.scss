@@ -1,0 +1,7 @@
+// /assets/variables.scss
+
+@import '~vuetify/dist/vuetify.min.css';
+@import '~vuetify/src/styles/main.sass';
+
+// change background to white..
+$material-light: map-merge($material-light, ( background: '#fff'));
