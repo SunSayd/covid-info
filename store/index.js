@@ -11,7 +11,6 @@ export const state = () => ({
     "recovered": 1
   },
   countries:{
-
   }
 })
 export const getters = () => ({
@@ -19,23 +18,26 @@ export const getters = () => ({
     return state.total.date;
   },
 })
-export const mutations = () => ({
-  SET_TOTAL : (state, payload) => {
+export const mutations ={
+  SET_TOTAL (state, payload)  {
     state.total = payload
   },
-  SET_CONTRIES : (state, payload) => {
+  SET_CONTRIES (state, payload) {
     state.countries = payload
   }
-})
-export const actions = () => ({
-  GET_TOTAL : async (context, payload) => {
-    let { data } = await axios.get('https://coronavirus-stat.herokuapp.com/history/global')
-    context.commit('SET_TOTAL', data)
+}
+
+export const actions ={
+  async GET_TOTAL({commit}){
+    let responce  = await this.$axios.get('https://coronavirus-stat.herokuapp.com/history/global/')
+    commit('SET_TOTAL', responce.data)
   },
-  GET_CONTRIES : async (context, payload) => {
-    let { data } = await axios.get('https://coronavirus-stat.herokuapp.com/world/1580342400')
-    context.commit('SET_TOTAL', data)
+  async GET_CONTRIES({commit}){
+    let responce  = await this.$axios.get('https://coronavirus-stat.herokuapp.com/world/1580342400/')
+    commit('SET_CONTRIES', responce.data)
+    console.log( state.countries)
   }
-})
+}
+
 
 

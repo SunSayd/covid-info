@@ -26,7 +26,11 @@ export default {
     Snackbar,
     Tabs,
     Shields
-  }
+  },
+    async asyncData ({ error, store }) {
+      await store.dispatch('GET_TOTAL'),
+        await store.dispatch('GET_CONTRIES')
+    }
 }
 </script>
 
