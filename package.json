@@ -31,6 +31,6 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^4.0.0",
     "sass-loader": "^8.0.2",
-    "vuetify": "^2.2.21"
+    "vuetify": "^2.6.10"
   }
 }
